@@ -1,0 +1,12 @@
+#!/bin/bash
+pid=$(ps -ef | grep library-server.jar | grep -v grep | awk '{print $2}')
+if [ -z "$pid" ]; then
+    echo "library-server process NOT EXIST"
+else
+   echo "KILL library-server process ${pid}"
+   kill -9 $pid
+fi
+
+nohup java -Dspring.profiles.active=dev  -jar library-server.jar >/dev/null 2>&1 &
+
+ps aux | grep library-server.jar | grep -v grep
