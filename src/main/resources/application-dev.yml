@@ -7,12 +7,12 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://47.119.126.27:3306/bms_boot?characterEncoding=utf8&useSSL=false
     username: root
-    password: yinyu@hz2025
+    password: *********
 # todo 开启 redis 取消注释即可
   redis:
     host: 47.119.126.27
     port: 6379
-    password: yinyu@hz2025
+    password: **********
     database: 2
     lettuce:
       pool:
